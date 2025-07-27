@@ -5,17 +5,49 @@
  * @format
  */
 
-import { NewAppScreen } from '@react-native/new-app-screen';
-import { StatusBar, StyleSheet, useColorScheme, View } from 'react-native';
-
+import { Button, SafeAreaView, StyleSheet, View } from 'react-native';
+import { NativeModules } from 'react-native';
 function App() {
-  const isDarkMode = useColorScheme() === 'dark';
+  const { CalendarModule, CameraModule } = NativeModules;
+
+  const onPress = () => {
+    if (CalendarModule) {
+      CalendarModule.createCalendarEvent('Meeting', 'Office');
+
+      // For the synchronous method, it should be called synchronously in JS
+      // But usually, you'd wrap it in a try-catch for safety if it might fail.
+      try {
+        const deviceName = CalendarModule.getName();
+        console.log('Device Name:', deviceName);
+      } catch (e) {
+        console.error('Error getting device name:', e);
+      }
+    } else {
+      console.warn(
+        'CalendarModule not found. Make sure it is correctly linked.',
+      );
+    }
+  };
+
+  const openPreview = () => {
+    if (CameraModule) {
+      CameraModule.openPreview();
+    } else {
+      console.warn('CameraModule not found');
+    }
+  };
 
   return (
-    <View style={styles.container}>
-      <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
-      <NewAppScreen templateFileName="App.tsx" />
-    </View>
+    <SafeAreaView style={{ flex: 1 }}>
+      <View style={styles.container}>
+        <Button
+          title="Click to invoke your native module!"
+          color="#841584"
+          onPress={onPress}
+        />
+        <Button title="Take a picture" color="blue" onPress={openPreview} />
+      </View>
+    </SafeAreaView>
   );
 }
 
