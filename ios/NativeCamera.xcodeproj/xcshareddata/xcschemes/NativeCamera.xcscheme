@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-               BuildableName = "LinkingApp.app"
-               BlueprintName = "LinkingApp"
-               ReferencedContainer = "container:LinkingApp.xcodeproj">
+               BuildableName = "NativeCamera.app"
+               BlueprintName = "NativeCamera"
+               ReferencedContainer = "container:NativeCamera.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "00E356ED1AD99517003FC87E"
-               BuildableName = "LinkingAppTests.xctest"
-               BlueprintName = "LinkingAppTests"
-               ReferencedContainer = "container:LinkingApp.xcodeproj">
+               BuildableName = "NativeCameraTests.xctest"
+               BlueprintName = "NativeCameraTests"
+               ReferencedContainer = "container:NativeCamera.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -55,9 +55,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "LinkingApp.app"
-            BlueprintName = "LinkingApp"
-            ReferencedContainer = "container:LinkingApp.xcodeproj">
+            BuildableName = "NativeCamera.app"
+            BlueprintName = "NativeCamera"
+            ReferencedContainer = "container:NativeCamera.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -72,9 +72,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "LinkingApp.app"
-            BlueprintName = "LinkingApp"
-            ReferencedContainer = "container:LinkingApp.xcodeproj">
+            BuildableName = "NativeCamera.app"
+            BlueprintName = "NativeCamera"
+            ReferencedContainer = "container:NativeCamera.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
