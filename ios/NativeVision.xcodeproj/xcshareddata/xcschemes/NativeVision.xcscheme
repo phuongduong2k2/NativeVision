@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-               BuildableName = "NativeCamera.app"
-               BlueprintName = "NativeCamera"
-               ReferencedContainer = "container:NativeCamera.xcodeproj">
+               BuildableName = "NativeVision.app"
+               BlueprintName = "NativeVision"
+               ReferencedContainer = "container:NativeVision.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "00E356ED1AD99517003FC87E"
-               BuildableName = "NativeCameraTests.xctest"
-               BlueprintName = "NativeCameraTests"
-               ReferencedContainer = "container:NativeCamera.xcodeproj">
+               BuildableName = "NativeVisionTests.xctest"
+               BlueprintName = "NativeVisionTests"
+               ReferencedContainer = "container:NativeVision.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -55,9 +55,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "NativeCamera.app"
-            BlueprintName = "NativeCamera"
-            ReferencedContainer = "container:NativeCamera.xcodeproj">
+            BuildableName = "NativeVision.app"
+            BlueprintName = "NativeVision"
+            ReferencedContainer = "container:NativeVision.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -72,9 +72,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "NativeCamera.app"
-            BlueprintName = "NativeCamera"
-            ReferencedContainer = "container:NativeCamera.xcodeproj">
+            BuildableName = "NativeVision.app"
+            BlueprintName = "NativeVision"
+            ReferencedContainer = "container:NativeVision.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
