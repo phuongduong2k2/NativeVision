@@ -17,18 +17,19 @@
 		9796D4AA2E31DCC900F56D4F /* RCTCalendarModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 9796D4A92E31DCC900F56D4F /* RCTCalendarModule.m */; };
 		9796D4AE2E31EF5200F56D4F /* RCTCameraModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9796D4AD2E31EF5200F56D4F /* RCTCameraModule.swift */; };
 		9796D4B02E31EFBB00F56D4F /* RCTCameraModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 9796D4AF2E31EFBB00F56D4F /* RCTCameraModule.m */; };
+		97BCF0FB2E37394B008A3D05 /* CustomCameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97BCF0FA2E37394B008A3D05 /* CustomCameraView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		13B07F961A680F5B00A75B9A /* NativeVision.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "NativeVision.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = "NativeVision/Images.xcassets"; sourceTree = "<group>"; };
-		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = "NativeVision/Info.plist"; sourceTree = "<group>"; };
+		13B07F961A680F5B00A75B9A /* NativeVision.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NativeVision.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = NativeVision/Images.xcassets; sourceTree = "<group>"; };
+		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = NativeVision/Info.plist; sourceTree = "<group>"; };
 		13B07FB81A68108700A75B9A /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = PrivacyInfo.xcprivacy; path = NativeVision/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		3B4392A12AC88292D35C810B /* Pods-NativeVision.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NativeVision.debug.xcconfig"; path = "Target Support Files/Pods-NativeVision/Pods-NativeVision.debug.xcconfig"; sourceTree = "<group>"; };
 		5709B34CF0A7D63546082F79 /* Pods-NativeVision.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NativeVision.release.xcconfig"; path = "Target Support Files/Pods-NativeVision/Pods-NativeVision.release.xcconfig"; sourceTree = "<group>"; };
 		5DCACB8F33CDC322A6C60F78 /* libPods-NativeVision.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-NativeVision.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		761780EC2CA45674006654EE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = NativeVision/AppDelegate.swift; sourceTree = "<group>"; };
-		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = "NativeVision/LaunchScreen.storyboard"; sourceTree = "<group>"; };
+		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = NativeVision/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		973E7EC22E3378DA0098F9D8 /* CustomCameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCameraViewController.swift; sourceTree = "<group>"; };
 		973E7EC42E3390520098F9D8 /* PreviewCapturedImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewCapturedImageViewController.swift; sourceTree = "<group>"; };
 		9796D4A82E31DC8800F56D4F /* RCTCalendarModule.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RCTCalendarModule.h; sourceTree = "<group>"; };
@@ -37,6 +38,7 @@
 		9796D4AD2E31EF5200F56D4F /* RCTCameraModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RCTCameraModule.swift; sourceTree = "<group>"; };
 		9796D4AF2E31EFBB00F56D4F /* RCTCameraModule.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RCTCameraModule.m; sourceTree = "<group>"; };
 		9796D4B12E31F24200F56D4F /* nativeModules.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = nativeModules.h; sourceTree = "<group>"; };
+		97BCF0FA2E37394B008A3D05 /* CustomCameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCameraView.swift; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -61,10 +63,8 @@
 				81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */,
 				13B07FB81A68108700A75B9A /* PrivacyInfo.xcprivacy */,
 				9796D4B12E31F24200F56D4F /* nativeModules.h */,
-				973E7EC22E3378DA0098F9D8 /* CustomCameraViewController.swift */,
-				973E7EC42E3390520098F9D8 /* PreviewCapturedImageViewController.swift */,
 			);
-			name = "NativeVision";
+			name = NativeVision;
 			sourceTree = "<group>";
 		};
 		2D16E6871FA4F8E400B85C8A /* Frameworks */ = {
@@ -91,6 +91,8 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
+				97BCF0F92E3738AF008A3D05 /* Views */,
+				97BCF0F82E3738A7008A3D05 /* ViewControllers */,
 				13B07FAE1A68108700A75B9A /* NativeVision */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				83CBBA001A601CBA00E9B192 /* Products */,
@@ -108,6 +110,23 @@
 				13B07F961A680F5B00A75B9A /* NativeVision.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		97BCF0F82E3738A7008A3D05 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				973E7EC22E3378DA0098F9D8 /* CustomCameraViewController.swift */,
+				973E7EC42E3390520098F9D8 /* PreviewCapturedImageViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		97BCF0F92E3738AF008A3D05 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				97BCF0FA2E37394B008A3D05 /* CustomCameraView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		BBD78D7AC51CEA395F1C20DB /* Pods */ = {
@@ -138,8 +157,8 @@
 			);
 			dependencies = (
 			);
-			name = "NativeVision";
-			productName = "NativeVision";
+			name = NativeVision;
+			productName = NativeVision;
 			productReference = 13B07F961A680F5B00A75B9A /* NativeVision.app */;
 			productType = "com.apple.product-type.application";
 		};
@@ -273,6 +292,7 @@
 				761780ED2CA45674006654EE /* AppDelegate.swift in Sources */,
 				9796D4AA2E31DCC900F56D4F /* RCTCalendarModule.m in Sources */,
 				973E7EC52E3390520098F9D8 /* PreviewCapturedImageViewController.swift in Sources */,
+				97BCF0FB2E37394B008A3D05 /* CustomCameraView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -288,8 +308,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 2WKUVY77NS;
 				ENABLE_BITCODE = NO;
-				INFOPLIST_FILE = "NativeVision/Info.plist";
-             INFOPLIST_KEY_CFBundleDisplayName = "NativeVision";
+				INFOPLIST_FILE = NativeVision/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = NativeVision;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.1;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -304,7 +323,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				"PRODUCT_BUNDLE_IDENTIFIER[sdk=iphoneos*]" = com.dqphuong.NativeVision;
-				PRODUCT_NAME = "NativeVision";
+				PRODUCT_NAME = NativeVision;
 				SWIFT_OBJC_BRIDGING_HEADER = nativeModules.h;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -320,8 +339,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 2WKUVY77NS;
-				INFOPLIST_FILE = "NativeVision/Info.plist";
-             INFOPLIST_KEY_CFBundleDisplayName = "NativeVision";
+				INFOPLIST_FILE = NativeVision/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = NativeVision;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.1;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -336,7 +354,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				"PRODUCT_BUNDLE_IDENTIFIER[sdk=iphoneos*]" = com.dqphuong.NativeVision;
-				PRODUCT_NAME = "NativeVision";
+				PRODUCT_NAME = NativeVision;
 				SWIFT_OBJC_BRIDGING_HEADER = nativeModules.h;
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -412,10 +430,7 @@
 					"-DFOLLY_CFG_NO_COROUTINES=1",
 					"-DFOLLY_HAVE_CLOCK_GETTIME=1",
 				);
-				OTHER_LDFLAGS = (
-					"$(inherited)",
-					" ",
-				);
+				OTHER_LDFLAGS = "$(inherited)  ";
 				REACT_NATIVE_PATH = "${PODS_ROOT}/../../node_modules/react-native";
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) DEBUG";
@@ -484,10 +499,7 @@
 					"-DFOLLY_CFG_NO_COROUTINES=1",
 					"-DFOLLY_HAVE_CLOCK_GETTIME=1",
 				);
-				OTHER_LDFLAGS = (
-					"$(inherited)",
-					" ",
-				);
+				OTHER_LDFLAGS = "$(inherited)  ";
 				REACT_NATIVE_PATH = "${PODS_ROOT}/../../node_modules/react-native";
 				SDKROOT = iphoneos;
 				USE_HERMES = true;
