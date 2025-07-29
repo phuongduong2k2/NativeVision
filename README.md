@@ -1,4 +1,5 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+# NativeVision
+<img src="https://github.com/user-attachments/assets/6d747af2-3dd7-4bed-9008-bfd877d3b30a" alt="NativeVision" width="300" height="300">
 
 # Getting Started
 
