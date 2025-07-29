@@ -29,9 +29,14 @@ function App() {
     }
   };
 
-  const openPreview = () => {
+  const openPreview = async () => {
     if (CameraModule) {
-      CameraModule.openPreview();
+      try {
+        const message = await CameraModule.openPreview();
+        console.log(message);
+      } catch (error) {
+        console.warn('some thing wrong');
+      }
     } else {
       console.warn('CameraModule not found');
     }

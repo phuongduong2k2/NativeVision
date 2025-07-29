@@ -10,5 +10,6 @@
 
 @interface RCT_EXTERN_MODULE(RCTCameraModule, NSObject)
 
-RCT_EXTERN_METHOD(openPreview)
+RCT_EXTERN_METHOD(openPreview:(RCTPromiseResolveBlock)resolve
+                  rejecter:(RCTPromiseRejectBlock)reject)
 @end

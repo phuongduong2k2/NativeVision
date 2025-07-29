@@ -8,11 +8,17 @@
 import UIKit
 import AVFoundation
 
-class CustomCameraViewController: CustomCameraView {
+protocol CameraViewControllerDelegate: AnyObject {
+  func getImage(_ view: CameraViewController, image: UIImage)
+}
+
+class CameraViewController: CameraView {
   
   var captureSession: AVCaptureSession!
   var photoOutput: AVCapturePhotoOutput!
   var videoPreviewLayer: AVCaptureVideoPreviewLayer!
+  
+  weak var delegate: CameraViewControllerDelegate?
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -144,9 +150,13 @@ class CustomCameraViewController: CustomCameraView {
     }
     photoOutput.capturePhoto(with: settings, delegate: self)
   }
+  
+  override func closeButtonTapped() {
+    dismiss(animated: true)
+  }
 }
 
-extension CustomCameraViewController: AVCapturePhotoCaptureDelegate {
+extension CameraViewController: AVCapturePhotoCaptureDelegate {
   
   func photoOutput(_ output: AVCapturePhotoOutput, didFinishProcessingPhoto photo: AVCapturePhoto, error: Error?) {
     if let error = error {
@@ -162,7 +172,7 @@ extension CustomCameraViewController: AVCapturePhotoCaptureDelegate {
     // Convert data to UIImage
     if let capturedImage = UIImage(data: imageData) {
       stopRun()
-      let vc = PreviewCapturedImageViewController()
+      let vc = PreviewImageViewController()
       vc.delegate = self
       vc.image = capturedImage
       present(vc, animated: true)
@@ -171,8 +181,12 @@ extension CustomCameraViewController: AVCapturePhotoCaptureDelegate {
   
 }
 
-extension CustomCameraViewController: PreviewCapturedImageViewControllerDelegate {
-  func done(_ view: PreviewCapturedImageViewController) {
+extension CameraViewController: PreviewImageViewControllerDelegate {
+  func done(_ view: PreviewImageViewController) {
     startRun()
+  }
+  
+  func selectedImage(_ view: PreviewImageViewController, image: UIImage) {
+    delegate?.getImage(self, image: image)
   }
 }

@@ -11,6 +11,9 @@ import React
 @objc(RCTCameraModule)
 class RCTCameraModule: NSObject, RCTBridgeModule {
   
+  private var currentResolve: RCTPromiseResolveBlock?
+  private var currentReject: RCTPromiseRejectBlock?
+  
   static func moduleName() -> String! {
     return "CameraModule"
   }
@@ -20,7 +23,10 @@ class RCTCameraModule: NSObject, RCTBridgeModule {
   }
   
   @objc
-  func openPreview() {
+  func openPreview(_ resolve: @escaping RCTPromiseResolveBlock,
+                   rejecter reject: @escaping RCTPromiseRejectBlock) -> Void {
+    self.currentResolve = resolve
+    self.currentReject = reject
     DispatchQueue.main.async { // Ensure UI operations are on the main thread
       // 1. Get the currently presented view controller
       // RCTPresentedViewController() is a React Native helper to get the top-most view controller.
@@ -36,12 +42,21 @@ class RCTCameraModule: NSObject, RCTBridgeModule {
       }
       
       // 2. Create an instance of your new native screen
-      let navController = CustomCameraViewController()
+      let navController = CameraViewController()
+      navController.delegate = self
       navController.modalPresentationStyle = .fullScreen
       
       topViewController.present(navController, animated: true)
       
       print("Native screen 'MyNewNativeViewController' presented.")
     }
+  }
+}
+
+extension RCTCameraModule: CameraViewControllerDelegate {
+  func getImage(_ view: CameraViewController, image: UIImage) {
+    currentResolve?("Day la Image")
+    let data = image.jpegData(compressionQuality: 1)?.base64EncodedData()
+    currentReject = nil
   }
 }

@@ -12,12 +12,12 @@
 		61FE68E88E4FD5A229D29A98 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB81A68108700A75B9A /* PrivacyInfo.xcprivacy */; };
 		761780ED2CA45674006654EE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761780EC2CA45674006654EE /* AppDelegate.swift */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
-		973E7EC32E3378DA0098F9D8 /* CustomCameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 973E7EC22E3378DA0098F9D8 /* CustomCameraViewController.swift */; };
-		973E7EC52E3390520098F9D8 /* PreviewCapturedImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 973E7EC42E3390520098F9D8 /* PreviewCapturedImageViewController.swift */; };
+		973E7EC32E3378DA0098F9D8 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 973E7EC22E3378DA0098F9D8 /* CameraViewController.swift */; };
+		973E7EC52E3390520098F9D8 /* PreviewImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 973E7EC42E3390520098F9D8 /* PreviewImageViewController.swift */; };
 		9796D4AA2E31DCC900F56D4F /* RCTCalendarModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 9796D4A92E31DCC900F56D4F /* RCTCalendarModule.m */; };
 		9796D4AE2E31EF5200F56D4F /* RCTCameraModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9796D4AD2E31EF5200F56D4F /* RCTCameraModule.swift */; };
 		9796D4B02E31EFBB00F56D4F /* RCTCameraModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 9796D4AF2E31EFBB00F56D4F /* RCTCameraModule.m */; };
-		97BCF0FB2E37394B008A3D05 /* CustomCameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97BCF0FA2E37394B008A3D05 /* CustomCameraView.swift */; };
+		97BCF0FB2E37394B008A3D05 /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97BCF0FA2E37394B008A3D05 /* CameraView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,15 +30,14 @@
 		5DCACB8F33CDC322A6C60F78 /* libPods-NativeVision.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-NativeVision.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		761780EC2CA45674006654EE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = NativeVision/AppDelegate.swift; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = NativeVision/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		973E7EC22E3378DA0098F9D8 /* CustomCameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCameraViewController.swift; sourceTree = "<group>"; };
-		973E7EC42E3390520098F9D8 /* PreviewCapturedImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewCapturedImageViewController.swift; sourceTree = "<group>"; };
+		973E7EC22E3378DA0098F9D8 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
+		973E7EC42E3390520098F9D8 /* PreviewImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewImageViewController.swift; sourceTree = "<group>"; };
 		9796D4A82E31DC8800F56D4F /* RCTCalendarModule.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RCTCalendarModule.h; sourceTree = "<group>"; };
 		9796D4A92E31DCC900F56D4F /* RCTCalendarModule.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RCTCalendarModule.m; sourceTree = "<group>"; };
-		9796D4AC2E31EF4500F56D4F /* RCTCameraModule.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RCTCameraModule.h; sourceTree = "<group>"; };
 		9796D4AD2E31EF5200F56D4F /* RCTCameraModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RCTCameraModule.swift; sourceTree = "<group>"; };
 		9796D4AF2E31EFBB00F56D4F /* RCTCameraModule.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RCTCameraModule.m; sourceTree = "<group>"; };
 		9796D4B12E31F24200F56D4F /* nativeModules.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = nativeModules.h; sourceTree = "<group>"; };
-		97BCF0FA2E37394B008A3D05 /* CustomCameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCameraView.swift; sourceTree = "<group>"; };
+		97BCF0FA2E37394B008A3D05 /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -81,7 +80,6 @@
 			children = (
 				9796D4A82E31DC8800F56D4F /* RCTCalendarModule.h */,
 				9796D4A92E31DCC900F56D4F /* RCTCalendarModule.m */,
-				9796D4AC2E31EF4500F56D4F /* RCTCameraModule.h */,
 				9796D4AD2E31EF5200F56D4F /* RCTCameraModule.swift */,
 				9796D4AF2E31EFBB00F56D4F /* RCTCameraModule.m */,
 			);
@@ -115,8 +113,8 @@
 		97BCF0F82E3738A7008A3D05 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				973E7EC22E3378DA0098F9D8 /* CustomCameraViewController.swift */,
-				973E7EC42E3390520098F9D8 /* PreviewCapturedImageViewController.swift */,
+				973E7EC22E3378DA0098F9D8 /* CameraViewController.swift */,
+				973E7EC42E3390520098F9D8 /* PreviewImageViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -124,7 +122,7 @@
 		97BCF0F92E3738AF008A3D05 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				97BCF0FA2E37394B008A3D05 /* CustomCameraView.swift */,
+				97BCF0FA2E37394B008A3D05 /* CameraView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -286,13 +284,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				973E7EC32E3378DA0098F9D8 /* CustomCameraViewController.swift in Sources */,
+				973E7EC32E3378DA0098F9D8 /* CameraViewController.swift in Sources */,
 				9796D4B02E31EFBB00F56D4F /* RCTCameraModule.m in Sources */,
 				9796D4AE2E31EF5200F56D4F /* RCTCameraModule.swift in Sources */,
 				761780ED2CA45674006654EE /* AppDelegate.swift in Sources */,
 				9796D4AA2E31DCC900F56D4F /* RCTCalendarModule.m in Sources */,
-				973E7EC52E3390520098F9D8 /* PreviewCapturedImageViewController.swift in Sources */,
-				97BCF0FB2E37394B008A3D05 /* CustomCameraView.swift in Sources */,
+				973E7EC52E3390520098F9D8 /* PreviewImageViewController.swift in Sources */,
+				97BCF0FB2E37394B008A3D05 /* CameraView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

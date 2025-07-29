@@ -7,14 +7,15 @@
 
 import UIKit
 
-protocol PreviewCapturedImageViewControllerDelegate: AnyObject {
-  func done(_ view: PreviewCapturedImageViewController)
+protocol PreviewImageViewControllerDelegate: AnyObject {
+  func done(_ view: PreviewImageViewController)
+  func selectedImage(_ view: PreviewImageViewController, image: UIImage)
 }
 
-class PreviewCapturedImageViewController: UIViewController {
+class PreviewImageViewController: UIViewController {
   
   var image: UIImage!
-  weak var delegate: PreviewCapturedImageViewControllerDelegate?
+  weak var delegate: PreviewImageViewControllerDelegate?
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -34,11 +35,11 @@ class PreviewCapturedImageViewController: UIViewController {
     imageView.translatesAutoresizingMaskIntoConstraints = false
     view.addSubview(imageView)
     
-    let useImageButton = UIButton(type: .system)
-    useImageButton.setTitle("Use this picture", for: .normal)
-    useImageButton.translatesAutoresizingMaskIntoConstraints = false
-    useImageButton.addTarget(self, action: #selector(usePicture), for: .touchUpInside)
-    view.addSubview(useImageButton)
+    let useButton = UIButton(type: .system)
+    useButton.setTitle("Use", for: .normal)
+    useButton.translatesAutoresizingMaskIntoConstraints = false
+    useButton.addTarget(self, action: #selector(usePicture), for: .touchUpInside)
+    view.addSubview(useButton)
     
     let cancelButton = UIButton(type: .system)
     cancelButton.setTitle("Cancel", for: .normal)
@@ -47,21 +48,36 @@ class PreviewCapturedImageViewController: UIViewController {
     cancelButton.addTarget(self, action: #selector(cancelPreview), for: .touchUpInside)
     view.addSubview(cancelButton)
     
+    let footerView = UIView()
+    footerView.addSubview(useButton)
+    footerView.addSubview(cancelButton)
+    footerView.translatesAutoresizingMaskIntoConstraints = false
+    view.addSubview(footerView)
+    
+    NSLayoutConstraint.activate([
+      footerView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+      footerView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+      footerView.heightAnchor.constraint(equalToConstant: 80),
+      footerView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
+      
+      useButton.trailingAnchor.constraint(equalTo: footerView.trailingAnchor, constant: -20),
+      useButton.heightAnchor.constraint(equalTo: footerView.heightAnchor),
+      
+      cancelButton.leadingAnchor.constraint(equalTo: footerView.leadingAnchor, constant: 20),
+      cancelButton.heightAnchor.constraint(equalTo: footerView.heightAnchor)
+    ])
+    
     NSLayoutConstraint.activate([
       imageView.centerYAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerYAnchor),
       imageView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
       imageView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-      
-      useImageButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
-      useImageButton.trailingAnchor.constraint(equalTo: view.trailingAnchor,constant: -20),
-      
-      cancelButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
-      cancelButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20)
+      imageView.bottomAnchor.constraint(lessThanOrEqualTo: footerView.topAnchor)
     ])
   }
   
   @objc private func usePicture() {
     UIImageWriteToSavedPhotosAlbum(image, self, #selector(afterSavePicture), nil)
+    delegate?.selectedImage(self, image: image)
   }
   
   @objc private func afterSavePicture(_ image: UIImage, didFinishSavingWithError error: Error?, contextInfo: UnsafeRawPointer) {
