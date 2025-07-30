@@ -9,12 +9,12 @@ import UIKit
 
 protocol PreviewImageViewControllerDelegate: AnyObject {
   func done(_ view: PreviewImageViewController)
-  func selectedImage(_ view: PreviewImageViewController, image: UIImage)
+  func selectedImage(_ view: PreviewImageViewController,_ imageUri: String)
 }
 
 class PreviewImageViewController: UIViewController {
   
-  var image: UIImage!
+  var imageData: Data!
   weak var delegate: PreviewImageViewControllerDelegate?
   
   override func viewDidLoad() {
@@ -30,7 +30,7 @@ class PreviewImageViewController: UIViewController {
   
   private func setupView() {
     let imageView = UIImageView()
-    imageView.image = image
+    imageView.image = UIImage(data: imageData)
     imageView.contentMode = .scaleAspectFit
     imageView.translatesAutoresizingMaskIntoConstraints = false
     view.addSubview(imageView)
@@ -76,8 +76,18 @@ class PreviewImageViewController: UIViewController {
   }
   
   @objc private func usePicture() {
-    UIImageWriteToSavedPhotosAlbum(image, self, #selector(afterSavePicture), nil)
-    delegate?.selectedImage(self, image: image)
+    let fileManager = FileManager.default
+    let tempDir = fileManager.temporaryDirectory
+    let fileName = UUID().uuidString + ".jpeg"
+    let path = tempDir.appendingPathComponent(fileName, conformingTo: .image)
+    
+    do {
+      try imageData.write(to: path)
+      dismiss(animated: true)
+      delegate?.selectedImage(self, path.absoluteString)
+    } catch {
+      print("Can not save image to temporary directory!")
+    }
   }
   
   @objc private func afterSavePicture(_ image: UIImage, didFinishSavingWithError error: Error?, contextInfo: UnsafeRawPointer) {

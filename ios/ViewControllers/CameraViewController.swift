@@ -9,7 +9,7 @@ import UIKit
 import AVFoundation
 
 protocol CameraViewControllerDelegate: AnyObject {
-  func getImage(_ view: CameraViewController, image: UIImage)
+  func getImage(_ view: CameraViewController,_ imageUri: String)
 }
 
 class CameraViewController: CameraView {
@@ -56,10 +56,10 @@ class CameraViewController: CameraView {
       print("Unable to access back camera!")
       return
     }
-
+    
     do {
       let input = try AVCaptureDeviceInput(device: backCamera)
-
+      
       photoOutput = AVCapturePhotoOutput()
       
       if photoOutput.isLivePhotoCaptureSupported {
@@ -170,13 +170,12 @@ extension CameraViewController: AVCapturePhotoCaptureDelegate {
     }
     
     // Convert data to UIImage
-    if let capturedImage = UIImage(data: imageData) {
-      stopRun()
-      let vc = PreviewImageViewController()
-      vc.delegate = self
-      vc.image = capturedImage
-      present(vc, animated: true)
-    }
+    
+    stopRun()
+    let vc = PreviewImageViewController()
+    vc.delegate = self
+    vc.imageData = imageData
+    present(vc, animated: true)
   }
   
 }
@@ -186,7 +185,7 @@ extension CameraViewController: PreviewImageViewControllerDelegate {
     startRun()
   }
   
-  func selectedImage(_ view: PreviewImageViewController, image: UIImage) {
-    delegate?.getImage(self, image: image)
+  func selectedImage(_ view: PreviewImageViewController,_ imageUri: String) {
+    delegate?.getImage(self, imageUri)
   }
 }

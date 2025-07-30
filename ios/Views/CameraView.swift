@@ -15,6 +15,7 @@ class CameraView: UIViewController, UINavigationControllerDelegate {
   let flashButton = UIButton()
   let closeButton = UIButton()
   let galleryButton = UIButton()
+  let rotateButton = AppButton()
   
   lazy var imagePickerVC: UIImagePickerController = {
     let vc = UIImagePickerController()
@@ -77,13 +78,16 @@ class CameraView: UIViewController, UINavigationControllerDelegate {
     centerView.translatesAutoresizingMaskIntoConstraints = false
     stackViewFooter.addArrangedSubview(centerView)
     
-    let doneButton = UIButton(type: .system)
-    doneButton.setTitle("Done", for: .normal)
-    doneButton.addTarget(self, action: #selector(doneButtonTapped), for: .touchUpInside)
-    doneButton.translatesAutoresizingMaskIntoConstraints = false
+    let rotateImage = UIImageView(image: UIImage(named: "rotate"))
+    rotateImage.contentMode = .scaleAspectFit
+    rotateImage.frame = CGRect(x: .zero, y: .zero, width: 30, height: 30)
+    rotateButton.addSubview(rotateImage)
+    rotateButton.isScaleAnimation = true
+    rotateButton.addTarget(self, action: #selector(doneButtonTapped), for: .touchUpInside)
+    rotateButton.translatesAutoresizingMaskIntoConstraints = false
     
     let rightView = UIView()
-    rightView.addSubview(doneButton)
+    rightView.addSubview(rotateButton)
     rightView.translatesAutoresizingMaskIntoConstraints = false
     stackViewFooter.addArrangedSubview(rightView)
     
@@ -103,8 +107,8 @@ class CameraView: UIViewController, UINavigationControllerDelegate {
       captureButton.centerXAnchor.constraint(equalTo: centerView.centerXAnchor),
       captureButton.centerYAnchor.constraint(equalTo: centerView.centerYAnchor),
       
-      doneButton.centerXAnchor.constraint(equalTo: rightView.centerXAnchor),
-      doneButton.centerYAnchor.constraint(equalTo: rightView.centerYAnchor)
+      rotateButton.centerXAnchor.constraint(equalTo: rightView.centerXAnchor),
+      rotateButton.centerYAnchor.constraint(equalTo: rightView.centerYAnchor)
     ])
     
     NSLayoutConstraint.activate([
@@ -116,13 +120,12 @@ class CameraView: UIViewController, UINavigationControllerDelegate {
   }
   
   func setupHeaderButtons() {
-    flashButton.setImage(UIImage(systemName: "flashlight.off.fill")?.withTintColor(.systemYellow).withRenderingMode(.alwaysOriginal), for: .selected)
-    flashButton.setImage(UIImage(systemName: "flashlight.off.fill")?.withTintColor(.systemGray).withRenderingMode(.alwaysOriginal), for: .normal)
+    flashButton.setImage(UIImage(systemName: "flashlight.off.fill")?.withTintColor(.systemYellow).withRenderingMode(.alwaysOriginal), for: .normal)
     flashButton.translatesAutoresizingMaskIntoConstraints = false
     flashButton.addTarget(self, action: #selector(flashButtonPressed), for: .touchUpInside)
     cameraPreviewView.addSubview(flashButton)
     
-    closeButton.setImage(UIImage(systemName: "xmark")?.withTintColor(.systemGray).withRenderingMode(.alwaysOriginal), for: .normal)
+    closeButton.setImage(UIImage(named: "close")?.withTintColor(.white).withRenderingMode(.alwaysOriginal), for: .normal)
     closeButton.translatesAutoresizingMaskIntoConstraints = false
     closeButton.addTarget(self, action: #selector(closeButtonTapped), for: .touchUpInside)
     cameraPreviewView.addSubview(closeButton)
@@ -178,6 +181,7 @@ class CameraView: UIViewController, UINavigationControllerDelegate {
   
   @objc func flashButtonPressed() {
     flashButton.isSelected = !flashButton.isSelected
+    rotateButton.rotate()
   }
   
   @objc func galleryButtonTapped() {
