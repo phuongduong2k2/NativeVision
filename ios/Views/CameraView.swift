@@ -4,7 +4,7 @@
 //
 //  Created by Duong Phuong on 28/7/25.
 //
- 
+
 import UIKit
 import Photos
 import PhotosUI
@@ -12,10 +12,10 @@ import PhotosUI
 class CameraView: UIViewController, UINavigationControllerDelegate {
   
   let cameraPreviewView = UIView()
-  let flashButton = UIButton()
+  let flashButton = DynamicButton()
   let closeButton = UIButton()
   let galleryButton = UIButton()
-  let rotateButton = AppButton()
+  let rotateButton = DynamicButton()
   
   lazy var imagePickerVC: UIImagePickerController = {
     let vc = UIImagePickerController()
@@ -78,12 +78,8 @@ class CameraView: UIViewController, UINavigationControllerDelegate {
     centerView.translatesAutoresizingMaskIntoConstraints = false
     stackViewFooter.addArrangedSubview(centerView)
     
-    let rotateImage = UIImageView(image: UIImage(named: "rotate"))
-    rotateImage.contentMode = .scaleAspectFit
-    rotateImage.frame = CGRect(x: .zero, y: .zero, width: 30, height: 30)
-    rotateButton.addSubview(rotateImage)
-    rotateButton.isScaleAnimation = true
-    rotateButton.addTarget(self, action: #selector(doneButtonTapped), for: .touchUpInside)
+    rotateButton.configure(activeImage: UIImage(named: "rotate")?.withTintColor(.systemOrange), inactiveImage: UIImage(named: "rotate"), initialState: false, rotationAngle: 180)
+    rotateButton.addTarget(self, action: #selector(rotateButtonTapped), for: .touchUpInside)
     rotateButton.translatesAutoresizingMaskIntoConstraints = false
     
     let rightView = UIView()
@@ -108,7 +104,9 @@ class CameraView: UIViewController, UINavigationControllerDelegate {
       captureButton.centerYAnchor.constraint(equalTo: centerView.centerYAnchor),
       
       rotateButton.centerXAnchor.constraint(equalTo: rightView.centerXAnchor),
-      rotateButton.centerYAnchor.constraint(equalTo: rightView.centerYAnchor)
+      rotateButton.centerYAnchor.constraint(equalTo: rightView.centerYAnchor),
+      rotateButton.heightAnchor.constraint(equalToConstant: 50),
+      rotateButton.widthAnchor.constraint(equalToConstant: 50)
     ])
     
     NSLayoutConstraint.activate([
@@ -120,7 +118,7 @@ class CameraView: UIViewController, UINavigationControllerDelegate {
   }
   
   func setupHeaderButtons() {
-    flashButton.setImage(UIImage(systemName: "flashlight.off.fill")?.withTintColor(.systemYellow).withRenderingMode(.alwaysOriginal), for: .normal)
+    flashButton.configure(activeImage: UIImage(named: "flashlight")?.withTintColor(.systemOrange), inactiveImage: UIImage(named: "flashlight"), initialState: false)
     flashButton.translatesAutoresizingMaskIntoConstraints = false
     flashButton.addTarget(self, action: #selector(flashButtonPressed), for: .touchUpInside)
     cameraPreviewView.addSubview(flashButton)
@@ -131,10 +129,10 @@ class CameraView: UIViewController, UINavigationControllerDelegate {
     cameraPreviewView.addSubview(closeButton)
     
     NSLayoutConstraint.activate([
-      flashButton.topAnchor.constraint(equalTo: cameraPreviewView.topAnchor, constant: 20),
-      flashButton.leadingAnchor.constraint(equalTo: cameraPreviewView.leadingAnchor, constant: 20),
-      flashButton.heightAnchor.constraint(equalToConstant: 30),
-      flashButton.widthAnchor.constraint(equalToConstant: 30),
+      flashButton.topAnchor.constraint(equalTo: cameraPreviewView.topAnchor),
+      flashButton.leadingAnchor.constraint(equalTo: cameraPreviewView.leadingAnchor),
+      flashButton.heightAnchor.constraint(equalToConstant: 50),
+      flashButton.widthAnchor.constraint(equalToConstant: 50),
       
       closeButton.topAnchor.constraint(equalTo: cameraPreviewView.topAnchor, constant: 20),
       closeButton.trailingAnchor.constraint(equalTo: cameraPreviewView.trailingAnchor, constant: -20),
@@ -180,8 +178,6 @@ class CameraView: UIViewController, UINavigationControllerDelegate {
   }
   
   @objc func flashButtonPressed() {
-    flashButton.isSelected = !flashButton.isSelected
-    rotateButton.rotate()
   }
   
   @objc func galleryButtonTapped() {
@@ -194,7 +190,8 @@ class CameraView: UIViewController, UINavigationControllerDelegate {
   
   @objc func captureButtonTapped() {}
   
-  @objc func doneButtonTapped() {}
+  @objc func rotateButtonTapped() {
+  }
 }
 
 extension CameraView: UIImagePickerControllerDelegate {

@@ -18,6 +18,8 @@ class CameraViewController: CameraView {
   var photoOutput: AVCapturePhotoOutput!
   var videoPreviewLayer: AVCaptureVideoPreviewLayer!
   
+  var currentInput: AVCaptureDeviceInput!
+  
   weak var delegate: CameraViewControllerDelegate?
   
   override func viewDidLoad() {
@@ -59,7 +61,7 @@ class CameraViewController: CameraView {
     
     do {
       let input = try AVCaptureDeviceInput(device: backCamera)
-      
+      currentInput = input
       photoOutput = AVCapturePhotoOutput()
       
       if photoOutput.isLivePhotoCaptureSupported {
@@ -153,6 +155,33 @@ class CameraViewController: CameraView {
   
   override func closeButtonTapped() {
     dismiss(animated: true)
+  }
+  
+  override func rotateButtonTapped() {
+//    stopRun()
+//    let animator = UIViewPropertyAnimator(duration: 0.5, curve: .linear) {
+//      self.rotateButton.frame = self.rotateButton.frame.offsetBy(dx: -100, dy: 0)
+//    }
+//    animator.startAnimation()
+//    return
+    DispatchQueue.global(qos: .background).async {
+      self.captureSession.beginConfiguration()
+      self.captureSession.removeInput(self.currentInput)
+      guard let device = AVCaptureDevice.default(.builtInWideAngleCamera, for: .video, position: self.rotateButton.toggleValue ? .front : .back) else {
+        print("Can not init device")
+        return
+      }
+      do {
+        let input = try AVCaptureDeviceInput(device: device)
+        if self.captureSession.canAddInput(input) {
+          self.currentInput = input
+          self.captureSession.addInput(input)
+        }
+      } catch {
+        print("error")
+      }
+      self.captureSession.commitConfiguration()
+    }
   }
 }
 

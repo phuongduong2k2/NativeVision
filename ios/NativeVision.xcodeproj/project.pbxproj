@@ -13,7 +13,7 @@
 		761780ED2CA45674006654EE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761780EC2CA45674006654EE /* AppDelegate.swift */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		9713E0202E3A284A00253F44 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9713E01F2E3A284A00253F44 /* Extensions.swift */; };
-		9713E0222E3A2A4F00253F44 /* AppButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9713E0212E3A2A4F00253F44 /* AppButton.swift */; };
+		9713E0222E3A2A4F00253F44 /* DynamicButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9713E0212E3A2A4F00253F44 /* DynamicButton.swift */; };
 		973E7EC32E3378DA0098F9D8 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 973E7EC22E3378DA0098F9D8 /* CameraViewController.swift */; };
 		973E7EC52E3390520098F9D8 /* PreviewImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 973E7EC42E3390520098F9D8 /* PreviewImageViewController.swift */; };
 		9796D4AA2E31DCC900F56D4F /* RCTCalendarModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 9796D4A92E31DCC900F56D4F /* RCTCalendarModule.m */; };
@@ -33,7 +33,7 @@
 		761780EC2CA45674006654EE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = NativeVision/AppDelegate.swift; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = NativeVision/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9713E01F2E3A284A00253F44 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
-		9713E0212E3A2A4F00253F44 /* AppButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppButton.swift; sourceTree = "<group>"; };
+		9713E0212E3A2A4F00253F44 /* DynamicButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicButton.swift; sourceTree = "<group>"; };
 		973E7EC22E3378DA0098F9D8 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		973E7EC42E3390520098F9D8 /* PreviewImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewImageViewController.swift; sourceTree = "<group>"; };
 		9796D4A82E31DC8800F56D4F /* RCTCalendarModule.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RCTCalendarModule.h; sourceTree = "<group>"; };
@@ -136,7 +136,7 @@
 			isa = PBXGroup;
 			children = (
 				97BCF0FA2E37394B008A3D05 /* CameraView.swift */,
-				9713E0212E3A2A4F00253F44 /* AppButton.swift */,
+				9713E0212E3A2A4F00253F44 /* DynamicButton.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -301,7 +301,7 @@
 				973E7EC32E3378DA0098F9D8 /* CameraViewController.swift in Sources */,
 				9796D4B02E31EFBB00F56D4F /* RCTCameraModule.m in Sources */,
 				9796D4AE2E31EF5200F56D4F /* RCTCameraModule.swift in Sources */,
-				9713E0222E3A2A4F00253F44 /* AppButton.swift in Sources */,
+				9713E0222E3A2A4F00253F44 /* DynamicButton.swift in Sources */,
 				9713E0202E3A284A00253F44 /* Extensions.swift in Sources */,
 				761780ED2CA45674006654EE /* AppDelegate.swift in Sources */,
 				9796D4AA2E31DCC900F56D4F /* RCTCalendarModule.m in Sources */,
