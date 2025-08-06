@@ -16,6 +16,7 @@
 		9713E0222E3A2A4F00253F44 /* DynamicButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9713E0212E3A2A4F00253F44 /* DynamicButton.swift */; };
 		973E7EC32E3378DA0098F9D8 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 973E7EC22E3378DA0098F9D8 /* CameraViewController.swift */; };
 		973E7EC52E3390520098F9D8 /* PreviewImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 973E7EC42E3390520098F9D8 /* PreviewImageViewController.swift */; };
+		9778FC422E42F42200110168 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9778FC412E42F42200110168 /* NetworkService.swift */; };
 		9796D4AA2E31DCC900F56D4F /* RCTCalendarModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 9796D4A92E31DCC900F56D4F /* RCTCalendarModule.m */; };
 		9796D4AE2E31EF5200F56D4F /* RCTCameraModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9796D4AD2E31EF5200F56D4F /* RCTCameraModule.swift */; };
 		9796D4B02E31EFBB00F56D4F /* RCTCameraModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 9796D4AF2E31EFBB00F56D4F /* RCTCameraModule.m */; };
@@ -36,11 +37,13 @@
 		9713E0212E3A2A4F00253F44 /* DynamicButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicButton.swift; sourceTree = "<group>"; };
 		973E7EC22E3378DA0098F9D8 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		973E7EC42E3390520098F9D8 /* PreviewImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewImageViewController.swift; sourceTree = "<group>"; };
+		9778FC412E42F42200110168 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		9796D4A82E31DC8800F56D4F /* RCTCalendarModule.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RCTCalendarModule.h; sourceTree = "<group>"; };
 		9796D4A92E31DCC900F56D4F /* RCTCalendarModule.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RCTCalendarModule.m; sourceTree = "<group>"; };
 		9796D4AD2E31EF5200F56D4F /* RCTCameraModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RCTCameraModule.swift; sourceTree = "<group>"; };
 		9796D4AF2E31EFBB00F56D4F /* RCTCameraModule.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RCTCameraModule.m; sourceTree = "<group>"; };
 		9796D4B12E31F24200F56D4F /* nativeModules.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = nativeModules.h; sourceTree = "<group>"; };
+		97AAAB2D2E40B93900135905 /* NativeVision.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = NativeVision.entitlements; path = NativeVision/NativeVision.entitlements; sourceTree = "<group>"; };
 		97BCF0FA2E37394B008A3D05 /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
@@ -60,6 +63,7 @@
 		13B07FAE1A68108700A75B9A /* NativeVision */ = {
 			isa = PBXGroup;
 			children = (
+				97AAAB2D2E40B93900135905 /* NativeVision.entitlements */,
 				13B07FB51A68108700A75B9A /* Images.xcassets */,
 				761780EC2CA45674006654EE /* AppDelegate.swift */,
 				13B07FB61A68108700A75B9A /* Info.plist */,
@@ -93,6 +97,7 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
+				9778FC402E42F41200110168 /* Services */,
 				9713E01E2E3A283C00253F44 /* Extensions */,
 				97BCF0F92E3738AF008A3D05 /* Views */,
 				97BCF0F82E3738A7008A3D05 /* ViewControllers */,
@@ -121,6 +126,14 @@
 				9713E01F2E3A284A00253F44 /* Extensions.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		9778FC402E42F41200110168 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				9778FC412E42F42200110168 /* NetworkService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 		97BCF0F82E3738A7008A3D05 /* ViewControllers */ = {
@@ -196,6 +209,8 @@
 				Base,
 			);
 			mainGroup = 83CBB9F61A601CBA00E9B192;
+			packageReferences = (
+			);
 			productRefGroup = 83CBBA001A601CBA00E9B192 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -298,6 +313,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9778FC422E42F42200110168 /* NetworkService.swift in Sources */,
 				973E7EC32E3378DA0098F9D8 /* CameraViewController.swift in Sources */,
 				9796D4B02E31EFBB00F56D4F /* RCTCameraModule.m in Sources */,
 				9796D4AE2E31EF5200F56D4F /* RCTCameraModule.swift in Sources */,
@@ -319,6 +335,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = NativeVision/NativeVision.entitlements;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 2WKUVY77NS;
 				ENABLE_BITCODE = NO;
@@ -351,6 +368,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = NativeVision/NativeVision.entitlements;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 2WKUVY77NS;
 				INFOPLIST_FILE = NativeVision/Info.plist;
