@@ -7,6 +7,7 @@
 
 import { useState } from 'react';
 import {
+  ActivityIndicator,
   Button,
   Image,
   SafeAreaView,
@@ -18,10 +19,13 @@ import {
 import { NativeModules } from 'react-native';
 
 function App() {
-  const { CameraModule } = NativeModules;
+  const { CameraModule, AudioModule } = NativeModules;
 
   const [uri, setUri] = useState('');
-  const [musicUrl, setMusicUrl] = useState('');
+  const [musicUrl, setMusicUrl] = useState(
+    'http://codeskulptor-demos.commondatastorage.googleapis.com/pang/paza-moduless.mp3',
+  );
+  const [isLoading, setIsLoading] = useState(false);
 
   const openPreview = async () => {
     if (CameraModule) {
@@ -54,6 +58,7 @@ function App() {
               CameraModule.nativePrinter('Native Printer');
             }}
           />
+          {isLoading && <ActivityIndicator size={'large'} color="red" />}
           <TextInput
             value={musicUrl}
             onChangeText={setMusicUrl}
@@ -64,11 +69,14 @@ function App() {
             color={'orange'}
             onPress={async () => {
               try {
-                const message = await CameraModule.playMusic(musicUrl);
+                setIsLoading(true);
+                let newUrl = 'https://' + musicUrl.split('://')[1];
+                const message = await AudioModule.playMusic(newUrl);
                 console.log('result => ', message);
               } catch (error) {
                 console.log(error);
               }
+              setIsLoading(false);
             }}
           />
         </View>

@@ -14,10 +14,7 @@ class RCTCameraModule: NSObject, RCTBridgeModule {
   
   private var currentResolve: RCTPromiseResolveBlock?
   private var currentReject: RCTPromiseRejectBlock?
-  
-  let networkService = NetworkService.share
-  var audioPlayer: AVAudioPlayer?
-  
+   
   static func moduleName() -> String! {
     return "CameraModule"
   }
@@ -55,39 +52,6 @@ class RCTCameraModule: NSObject, RCTBridgeModule {
       
       topViewController.present(navController, animated: true)
       
-    }
-  }
-  
-  @objc func playMusic(_ url: String, resolve: @escaping RCTPromiseResolveBlock, reject: @escaping RCTPromiseRejectBlock) -> Void {
-    networkService.getData(urlString: url) { data, error in
-      if let error = error {
-        reject("Failed", "Get music!", error)
-        DispatchQueue.main.async {
-          let alert = UIAlertController(title: "Failed", message: "Can not get music!", preferredStyle: .alert)
-          
-          let cancelButton = UIAlertAction(title: "Cancel", style: .destructive)
-          let okButton = UIAlertAction(title: "Ok", style: .default)
-          alert.addAction(cancelButton)
-          alert.addAction(okButton)
-          guard let rootVC = self.getRootVC() else {
-            return
-          }
-          rootVC.present(alert, animated: true)
-        }
-        return
-      }
-      guard let data = data else {
-        print("Bad data")
-        return
-      }
-      do {
-        self.audioPlayer = try AVAudioPlayer(data: data)
-        self.audioPlayer?.prepareToPlay()
-        self.audioPlayer?.play()
-        resolve("Success")
-      } catch {
-        reject("Failed", "Play music", nil)
-      }
     }
   }
   

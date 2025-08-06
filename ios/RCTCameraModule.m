@@ -13,5 +13,4 @@
 RCT_EXTERN_METHOD(openCamera:(RCTPromiseResolveBlock)resolve
                   rejecter:(RCTPromiseRejectBlock)reject)
 RCT_EXTERN_METHOD(nativePrinter: (NSString *)message)
-RCT_EXTERN_METHOD(playMusic:(NSString)url resolve:(RCTPromiseResolveBlock)resolve reject:(RCTPromiseRejectBlock)reject)
 @end
