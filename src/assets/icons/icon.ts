@@ -7,6 +7,8 @@ import InactiveGearIcon from './inactive_gear.svg';
 import ActiveProfileIcon from './active_profile.svg';
 import InactiveProfileIcon from './inactive_profile.svg';
 import ScanIcon from './scan.svg';
+import ActiveBookmarkIcon from './active_bookmark.svg';
+import InactiveBookmarkIcon from './inactive_bookmark.svg';
 
 const AppIcons = {
   'active-home': ActiveHomeIcon,
@@ -17,6 +19,8 @@ const AppIcons = {
   'inactive-gear': InactiveGearIcon,
   'active-profile': ActiveProfileIcon,
   'inactive-profile': InactiveProfileIcon,
+  'active-bookmark': ActiveBookmarkIcon,
+  'inactive-bookmark': InactiveBookmarkIcon,
   scan: ScanIcon,
 };
 

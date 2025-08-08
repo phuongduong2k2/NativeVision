@@ -6,10 +6,9 @@ import NotificationScreen from '../screens/notification/NotificationScreen';
 import QrCodeScreen from '../screens/qrcode/QrCodeScreen';
 import SettingsScreen from '../screens/settings/SettingsScreen';
 import HomeScreen from '../screens/home/HomeScreen';
-import TabBarButton from './TabBarIcon';
 import { AppIconName } from '@src/assets/icons/icon';
 import QrCodeTabBar from './components/QrCodeTabBar';
-import { Button, Touchable } from 'react-native';
+import TabBarButton from './TabBarButton';
 
 type RootTabParamList = {
   Home: undefined;
@@ -42,10 +41,10 @@ const tabs: Tabs[] = [
   {
     name: 'Settings',
     icon: {
-      active: 'active-gear',
-      inactive: 'inactive-gear',
+      active: 'active-bookmark',
+      inactive: 'inactive-bookmark',
     },
-    label: 'Settings',
+    label: 'Bookmark',
     component: SettingsScreen,
   },
   {

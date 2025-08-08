@@ -7,7 +7,8 @@ import {
 } from 'react-native';
 import React from 'react';
 
-import SvgIcon from '@src/components/SvgIcon';
+import LottieView from 'lottie-react-native';
+import LottieFiles from '@src/assets/animations';
 
 const QrCodeTabBar = () => {
   const { CameraModule } = NativeModules;
@@ -21,13 +22,22 @@ const QrCodeTabBar = () => {
 
   return (
     <TouchableOpacity
-      activeOpacity={0.6}
+      activeOpacity={1}
       style={styles.pressView}
       onPress={onPress}
     >
       <View style={styles.scanContainer}>
         <View style={styles.scanContent}>
-          <SvgIcon name="scan" />
+          <LottieView
+            source={LottieFiles.scanMatrix}
+            style={{
+              width: '100%',
+              aspectRatio: 1,
+            }}
+            resizeMode="contain"
+            autoPlay
+            loop
+          />
         </View>
       </View>
       <Text style={{ fontSize: 12 }}>Scan Now</Text>
@@ -54,6 +64,7 @@ const styles = StyleSheet.create({
     width: 60,
     height: undefined,
     backgroundColor: 'white',
+    overflow: 'hidden',
     aspectRatio: 1,
     bottom: 0,
     borderRadius: 1000,

@@ -16,7 +16,11 @@ type Props = {
 const TabBarButton = (props: Props) => {
   const { onPress, icon, label, focusable } = props;
   return (
-    <TouchableOpacity onPress={onPress} style={styles.container}>
+    <TouchableOpacity
+      activeOpacity={1}
+      onPress={onPress}
+      style={styles.container}
+    >
       <SvgIcon name={focusable ? icon.active : icon.inactive} color="#F97A00" />
       <Text style={{ color: focusable ? '#F97A00' : 'black', fontSize: 12 }}>
         {label}
