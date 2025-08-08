@@ -22,10 +22,10 @@
 	<string>????</string>
 	<key>CFBundleVersion</key>
 	<string>$(CURRENT_PROJECT_VERSION)</string>
-  <key>NSPhotoLibraryUsageDescription</key>
-  <string>This app needs access to your photos to let you choose profile pictures.</string>
-  <key>NSCameraUsageDescription</key>
-  <string>This app needs access to your camera to let you take a pictures.</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>This app needs access to your photos to let you choose profile pictures.</string>
+	<key>NSCameraUsageDescription</key>
+	<string>This app needs access to your camera to let you take a pictures.</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSAppTransportSecurity</key>
@@ -53,5 +53,17 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
+	<key>UIAppFonts</key>
+	<array>
+		<string>NotoSansJP-Black.ttf</string>
+		<string>NotoSansJP-Bold.ttf</string>
+		<string>NotoSansJP-ExtraBold.ttf</string>
+		<string>NotoSansJP-ExtraLight.ttf</string>
+		<string>NotoSansJP-Light.ttf</string>
+		<string>NotoSansJP-Medium.ttf</string>
+		<string>NotoSansJP-Regular.ttf</string>
+		<string>NotoSansJP-SemiBold.ttf</string>
+		<string>NotoSansJP-Thin.ttf</string>
+	</array>
 </dict>
 </plist>

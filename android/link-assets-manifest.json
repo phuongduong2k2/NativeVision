@@ -1,0 +1,41 @@
+{
+  "migIndex": 1,
+  "data": [
+    {
+      "path": "src/assets/fonts/NotoSansJP-Black.ttf",
+      "sha1": "42a4dbda6169478e98429cfe3bd5a287713271e2"
+    },
+    {
+      "path": "src/assets/fonts/NotoSansJP-Bold.ttf",
+      "sha1": "deeb2988b389e84cddc8d622ca3bc12139c61f88"
+    },
+    {
+      "path": "src/assets/fonts/NotoSansJP-ExtraBold.ttf",
+      "sha1": "71fc7f76fbe8b7ecc33bc449239c7846b79667a0"
+    },
+    {
+      "path": "src/assets/fonts/NotoSansJP-ExtraLight.ttf",
+      "sha1": "a3bd48b7aba10e5488f90df12008a7ebb81714cd"
+    },
+    {
+      "path": "src/assets/fonts/NotoSansJP-Light.ttf",
+      "sha1": "64ebfe6694fdf840c4b9a1825b4f314b649ca598"
+    },
+    {
+      "path": "src/assets/fonts/NotoSansJP-Medium.ttf",
+      "sha1": "4e74826edfe5cd0ef2680d48aa5caed0e0118f39"
+    },
+    {
+      "path": "src/assets/fonts/NotoSansJP-Regular.ttf",
+      "sha1": "68d5dc6943a15e66bf33c8ed8fc4560ae5901ce5"
+    },
+    {
+      "path": "src/assets/fonts/NotoSansJP-SemiBold.ttf",
+      "sha1": "6068e3a9d01916eb9ea90f9f7aeee0cf5d1315b8"
+    },
+    {
+      "path": "src/assets/fonts/NotoSansJP-Thin.ttf",
+      "sha1": "c70b5aae2ab3ae5a5c179f9d202dbde19e14bae0"
+    }
+  ]
+}
