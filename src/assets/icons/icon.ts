@@ -9,6 +9,7 @@ import InactiveProfileIcon from './inactive_profile.svg';
 import ScanIcon from './scan.svg';
 import ActiveBookmarkIcon from './active_bookmark.svg';
 import InactiveBookmarkIcon from './inactive_bookmark.svg';
+import ChevronLeftIcon from './chevron-left.svg';
 
 const AppIcons = {
   'active-home': ActiveHomeIcon,
@@ -21,6 +22,7 @@ const AppIcons = {
   'inactive-profile': InactiveProfileIcon,
   'active-bookmark': ActiveBookmarkIcon,
   'inactive-bookmark': InactiveBookmarkIcon,
+  'chevron-left': ChevronLeftIcon,
   scan: ScanIcon,
 };
 

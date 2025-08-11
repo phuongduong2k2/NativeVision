@@ -9,17 +9,10 @@ import HomeScreen from '../screens/home/HomeScreen';
 import { AppIconName } from '@src/assets/icons/icon';
 import QrCodeTabBar from './components/QrCodeTabBar';
 import TabBarButton from './TabBarButton';
-
-type RootTabParamList = {
-  Home: undefined;
-  Profile: undefined;
-  Notification: undefined;
-  QrCode: undefined;
-  Settings: undefined;
-};
+import { TabStackParamList } from './type';
 
 type Tabs = {
-  name: keyof RootTabParamList;
+  name: keyof TabStackParamList;
   icon: {
     active: AppIconName;
     inactive: AppIconName;
@@ -76,7 +69,7 @@ const tabs: Tabs[] = [
   },
 ];
 
-const Tab = createBottomTabNavigator<RootTabParamList>();
+const Tab = createBottomTabNavigator<TabStackParamList>();
 
 const BottomTabNavigation = () => {
   return (
