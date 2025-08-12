@@ -1,15 +1,5 @@
-import {
-  View,
-  Text,
-  SafeAreaView,
-  Button,
-  TextInput,
-  ScrollView,
-  Image,
-  TouchableOpacity,
-} from 'react-native';
-import React, { useCallback, useEffect, useState } from 'react';
-import { getAuth, onAuthStateChanged } from '@react-native-firebase/auth';
+import { Text, ScrollView, Image, View } from 'react-native';
+import React from 'react';
 import useGoogle from '@src/hooks/useGoogle';
 import ScreenLayout from '@src/components/ScreenLayout';
 import ProfileSection from './components/ProfileSection';
@@ -30,20 +20,32 @@ const ProfileScreen = () => {
       >
         {user ? (
           <>
-            <Image
-              source={{
-                uri: 'https://dvqlxo2m2q99q.cloudfront.net/000_clients/657152/file/657152aPuXQUMx.jpg',
-              }}
-              resizeMode="cover"
+            <View
               style={{
                 height: 100,
                 aspectRatio: 1,
                 borderRadius: 1000,
+                borderWidth: 1,
                 borderColor: 'white',
               }}
-            />
+            >
+              {user.photoURL && (
+                <Image
+                  source={{
+                    uri: user.photoURL,
+                  }}
+                  resizeMode="cover"
+                  style={{
+                    height: '100%',
+                    width: '100%',
+                    borderRadius: 1000,
+                  }}
+                />
+              )}
+            </View>
+
             <Text style={{ color: 'white', fontWeight: '700', fontSize: 16 }}>
-              {user?.displayName}
+              {user?.displayName ?? 'Unknown'}
             </Text>
             <Text style={{ color: 'white', fontSize: 12 }}>
               Lorem ipsum dolor sit amet consectetur adipiscing elit.
@@ -56,9 +58,16 @@ const ProfileScreen = () => {
               width: 100,
               marginBottom: 10,
               borderRadius: 10,
-              height: 58,
+              height: 45,
               alignItems: 'center',
               justifyContent: 'center',
+            }}
+            contentStyle={{
+              alignItems: 'center',
+              justifyContent: 'center',
+              height: '100%',
+              width: '100%',
+              borderRadius: 10,
             }}
             onPress={() => {
               navigation.navigate('SignIn');

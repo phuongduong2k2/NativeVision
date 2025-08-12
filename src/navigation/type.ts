@@ -11,4 +11,8 @@ export type RootStackParamList = {
   SignIn: undefined;
   SignUp: undefined;
   ForgotPassword: undefined;
+  UpdateProfile: {
+    name: string;
+    photoURL: string;
+  };
 };

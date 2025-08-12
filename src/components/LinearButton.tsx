@@ -1,4 +1,4 @@
-import { TouchableOpacity, ViewStyle } from 'react-native';
+import { TouchableOpacity, View, ViewStyle } from 'react-native';
 import React from 'react';
 import LinearGradient from 'react-native-linear-gradient';
 
@@ -8,12 +8,23 @@ type Props = {
   containerStyle?: ViewStyle;
   onPress?: () => void;
   contentStyle?: ViewStyle;
+  linearContainerStyle?: ViewStyle;
 };
 
 const LinearButton = (props: Props) => {
-  const { colors, children, containerStyle, onPress, contentStyle } = props;
+  const {
+    colors,
+    children,
+    containerStyle,
+    onPress,
+    contentStyle,
+    linearContainerStyle,
+  } = props;
   return (
-    <TouchableOpacity onPress={onPress} style={containerStyle}>
+    <TouchableOpacity
+      onPress={onPress}
+      style={[{ height: 58 }, containerStyle]}
+    >
       <LinearGradient
         start={{ x: 0, y: 0 }}
         end={{ x: 1, y: 0 }}
@@ -21,9 +32,9 @@ const LinearButton = (props: Props) => {
         useAngle={true}
         angle={45}
         angleCenter={{ x: 0.5, y: 0.5 }}
-        style={contentStyle}
+        style={[{ height: '100%' }, linearContainerStyle]}
       >
-        {children}
+        <View style={contentStyle}>{children}</View>
       </LinearGradient>
     </TouchableOpacity>
   );

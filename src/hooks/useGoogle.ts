@@ -3,6 +3,7 @@ import {
   getAuth,
   signInWithEmailAndPassword,
   signOut,
+  updateProfile,
 } from '@react-native-firebase/auth';
 import useAuthStore from '@src/store';
 import useGlobalStore from '@src/store/globalStore';
@@ -13,8 +14,9 @@ type TEmailAndPassword = {
 };
 
 const useGoogle = () => {
-  const { user } = useAuthStore();
+  const { user, setUser } = useAuthStore();
   const { setIsLoading } = useGlobalStore();
+
   const createAccount = async ({ email, password }: TEmailAndPassword) => {
     setIsLoading(true);
     try {
@@ -56,11 +58,41 @@ const useGoogle = () => {
     setIsLoading(false);
   };
 
+  const updateInfo = async ({
+    displayName,
+    photoURL,
+    callback,
+  }: {
+    displayName: string;
+    photoURL: string;
+    callback?: () => void;
+  }) => {
+    setIsLoading(true);
+    if (user) {
+      try {
+        await updateProfile(user, {
+          displayName,
+          photoURL,
+        });
+        setUser({
+          ...user,
+          displayName,
+          photoURL,
+        });
+        callback?.();
+      } catch (error: any) {
+        console.log('Some thing wrong!');
+      }
+    }
+    setIsLoading(false);
+  };
+
   return {
     createAccount,
     logout,
     user,
     signIn,
+    updateInfo,
   };
 };
 
