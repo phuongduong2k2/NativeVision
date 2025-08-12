@@ -76,7 +76,6 @@ const BottomTabNavigation = () => {
     <Tab.Navigator
       screenOptions={{
         headerShown: false,
-        tabBarActiveTintColor: 'orange',
       }}
     >
       {tabs.map(({ component, name, label, icon }, index) => (

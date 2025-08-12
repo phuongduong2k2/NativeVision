@@ -43,15 +43,10 @@ const useGoogle = () => {
     setIsLoading(false);
   };
 
-  const signIn = async ({
-    email,
-    password,
-    callback,
-  }: TEmailAndPassword & { callback?: () => void }) => {
+  const signIn = async ({ email, password }: TEmailAndPassword) => {
     setIsLoading(true);
     try {
       await signInWithEmailAndPassword(getAuth(), email, password);
-      callback?.();
     } catch (error: any) {
       console.log('Invalid email or password');
     }

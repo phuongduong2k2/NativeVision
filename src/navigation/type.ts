@@ -8,11 +8,15 @@ export type TabStackParamList = {
 
 export type RootStackParamList = {
   BottomTabNavigation: undefined;
-  SignIn: undefined;
-  SignUp: undefined;
-  ForgotPassword: undefined;
   UpdateProfile: {
     name: string;
     photoURL: string;
   };
+  Auth: undefined;
+};
+
+export type AuthStackParamList = {
+  SignIn: undefined;
+  SignUp: undefined;
+  ForgotPassword: undefined;
 };

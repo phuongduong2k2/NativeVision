@@ -5,6 +5,7 @@ import useGoogle from '@src/hooks/useGoogle';
 import LinearButton from '@src/components/LinearButton';
 import { RootStackParamList } from '@src/navigation/type';
 import useAppNavigation from '@src/hooks/navigation';
+import { AppIconName } from '@src/assets/icons/icon';
 
 const ProfileSection = () => {
   const { logout, user } = useGoogle();
@@ -15,19 +16,23 @@ const ProfileSection = () => {
     colors: string[];
     screen?: keyof RootStackParamList;
     isHidden?: boolean;
+    icon: AppIconName;
   }[] = [
     {
       label: 'Settings',
       colors: ['#842ED8', '#DB28A9', '#9D1DCA'],
+      icon: 'active-gear',
     },
     {
       label: 'History',
       colors: ['#842ED8', '#DB28A9', '#9D1DCA'],
+      icon: 'active-bookmark',
     },
     {
       label: 'Liked songs',
       colors: ['#842ED8', '#DB28A9', '#9D1DCA'],
       isHidden: !user,
+      icon: 'active-bookmark',
     },
   ];
 
@@ -43,10 +48,10 @@ const ProfileSection = () => {
             });
           }}
           containerStyle={styles.containerButtonStyle}
-          linearContainerStyle={{ borderRadius: 10 }}
+          linearContainerStyle={{ borderRadius: 1000 }}
           contentStyle={styles.contentButtonStyle}
         >
-          <SvgIcon name="active-gear" color="white" />
+          <SvgIcon name="active-profile" color="white" />
           <Text style={styles.label}>Update Profile</Text>
         </LinearButton>
       )}
@@ -62,10 +67,10 @@ const ProfileSection = () => {
                 }
               }}
               containerStyle={styles.containerButtonStyle}
-              linearContainerStyle={{ borderRadius: 10 }}
+              linearContainerStyle={{ borderRadius: 1000 }}
               contentStyle={styles.contentButtonStyle}
             >
-              <SvgIcon name="active-gear" color="white" />
+              <SvgIcon name={item.icon} color="white" />
               <Text style={styles.label}>{item.label}</Text>
             </LinearButton>
           ),
@@ -75,7 +80,7 @@ const ProfileSection = () => {
           colors={['#EA2F14', '#E6521F', '#EA2F14']}
           onPress={logout}
           containerStyle={styles.containerButtonStyle}
-          linearContainerStyle={{ borderRadius: 10 }}
+          linearContainerStyle={{ borderRadius: 1000 }}
           contentStyle={styles.contentButtonStyle}
         >
           <SvgIcon name="active-gear" color="white" />
@@ -95,7 +100,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 16,
   },
   containerButtonStyle: {
-    height: 50,
+    height: 48,
     marginBottom: 10,
   },
   label: { marginLeft: 10, fontWeight: '700', color: 'white' },

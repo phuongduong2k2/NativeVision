@@ -25,6 +25,7 @@ const QrCodeTabBar = () => {
       activeOpacity={1}
       style={styles.pressView}
       onPress={onPress}
+      disabled
     >
       <View style={styles.scanContainer}>
         <View style={styles.scanContent}>

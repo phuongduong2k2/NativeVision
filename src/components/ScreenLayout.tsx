@@ -1,5 +1,6 @@
 import {
   ImageBackground,
+  ImageSourcePropType,
   StyleSheet,
   Text,
   TouchableOpacity,
@@ -7,14 +8,13 @@ import {
 } from 'react-native';
 import React from 'react';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import AppImages from '@src/assets/images';
 import SvgIcon from './SvgIcon';
 import { AppIconName } from '@src/assets/icons/icon';
 import useAppNavigation from '@src/hooks/navigation';
 
 type Props = {
   children: React.ReactNode;
-  wallpaper?: 'main' | 'list' | 'play';
+  wallpaper?: ImageSourcePropType;
   title?: string;
   leftButtonIcon?: AppIconName;
   rightButtonIcon?: AppIconName;
@@ -30,28 +30,11 @@ const ScreenLayout = (props: Props) => {
     title = '',
     leftButtonIcon = 'chevron-left',
     onPressLeftButton,
-    onPressRightButton,
     rightButtonIcon,
     headerShown = true,
   } = props;
 
   const navigation = useAppNavigation();
-
-  let finalWallpaper = null;
-
-  switch (wallpaper) {
-    case 'main':
-      finalWallpaper = AppImages.mainWallpaper;
-      break;
-    case 'list':
-      finalWallpaper = AppImages.listWallpaper;
-      break;
-    case 'play':
-      finalWallpaper = AppImages.playWallpaper;
-      break;
-    default:
-      finalWallpaper = AppImages.mainWallpaper;
-  }
 
   const goBack = () => {
     if (navigation.canGoBack()) {
@@ -60,11 +43,7 @@ const ScreenLayout = (props: Props) => {
   };
 
   return (
-    <ImageBackground
-      source={finalWallpaper}
-      style={{ flex: 1 }}
-      resizeMode="cover"
-    >
+    <ImageBackground source={wallpaper} style={{ flex: 1 }} resizeMode="cover">
       <SafeAreaView style={{ flex: 1 }}>
         {headerShown && (
           <View style={styles.header}>
@@ -76,17 +55,7 @@ const ScreenLayout = (props: Props) => {
                 <SvgIcon name={leftButtonIcon} color="white" />
               </TouchableOpacity>
             </View>
-            <Text
-              style={{
-                color: 'white',
-                flex: 1,
-                textAlign: 'center',
-                fontSize: 16,
-                fontWeight: '700',
-              }}
-            >
-              {title}
-            </Text>
+            <Text style={styles.titleText}>{title}</Text>
             <View style={styles.buttonContainer}>
               {rightButtonIcon && (
                 <TouchableOpacity style={styles.button}>
@@ -109,6 +78,13 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
+  },
+  titleText: {
+    color: 'white',
+    flex: 1,
+    textAlign: 'center',
+    fontSize: 16,
+    fontWeight: '700',
   },
   buttonContainer: {
     height: '100%',

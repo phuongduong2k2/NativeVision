@@ -3,6 +3,7 @@ import React from 'react';
 import SvgIcon from '@src/components/SvgIcon';
 import { AppIconName } from '@src/assets/icons/icon';
 import { BottomTabBarButtonProps } from '@react-navigation/bottom-tabs';
+import AppColors from '@src/assets/colors';
 
 type Props = {
   focused?: boolean;
@@ -21,8 +22,13 @@ const TabBarButton = (props: Props) => {
       onPress={onPress}
       style={styles.container}
     >
-      <SvgIcon name={focusable ? icon.active : icon.inactive} color="#F97A00" />
-      <Text style={{ color: focusable ? '#F97A00' : 'black', fontSize: 12 }}>
+      <SvgIcon
+        name={focusable ? icon.active : icon.inactive}
+        color={AppColors.primary}
+      />
+      <Text
+        style={{ color: focusable ? AppColors.primary : 'black', fontSize: 12 }}
+      >
         {label}
       </Text>
     </TouchableOpacity>

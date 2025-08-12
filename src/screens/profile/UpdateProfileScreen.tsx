@@ -5,7 +5,7 @@ import { RootStackParamList } from '@src/navigation/type';
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import useGoogle from '@src/hooks/useGoogle';
 import LinearButton from '@src/components/LinearButton';
-import SvgIcon from '@src/components/SvgIcon';
+import AppImages from '@src/assets/images';
 
 type Props = NativeStackScreenProps<RootStackParamList, 'UpdateProfile'>;
 
@@ -19,7 +19,7 @@ const UpdateProfileScreen = (props: Props) => {
   const { updateInfo } = useGoogle();
 
   return (
-    <ScreenLayout title="Update Profile">
+    <ScreenLayout wallpaper={AppImages.playWallpaper} title="Update Profile">
       <View style={{ paddingHorizontal: 16, flex: 1 }}>
         <TextInput
           value={newName}
@@ -37,7 +37,9 @@ const UpdateProfileScreen = (props: Props) => {
         />
         <LinearButton
           colors={['#842ED8', '#DB28A9', '#9D1DCA']}
-          containerStyle={styles.linearContainer}
+          containerStyle={styles.buttonContainer}
+          linearContainerStyle={{ borderRadius: 10 }}
+          contentStyle={styles.buttonContent}
           onPress={() => {
             updateInfo({
               displayName: newName,
@@ -45,9 +47,7 @@ const UpdateProfileScreen = (props: Props) => {
               callback: navigation.goBack,
             });
           }}
-          contentStyle={styles.contentStyle}
         >
-          <SvgIcon name="active-gear" color="white" />
           <Text style={styles.label}>Update</Text>
         </LinearButton>
       </View>
@@ -64,13 +64,11 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     paddingHorizontal: 10,
   },
-  linearContainer: {
-    height: 50,
-    marginTop: 20,
-    justifyContent: 'center',
-    marginBottom: 10,
-    borderRadius: 10,
-
+  label: { fontWeight: '700', color: 'white' },
+  buttonContainer: {
+    height: 48,
+    width: 100,
+    alignSelf: 'center',
     shadowColor: '#000',
     shadowOffset: {
       width: 0,
@@ -78,17 +76,16 @@ const styles = StyleSheet.create({
     },
     shadowOpacity: 0.34,
     shadowRadius: 6.27,
-
+    marginTop: 20,
     elevation: 10,
   },
-  contentStyle: {
-    flex: 1,
-    borderRadius: 10,
-    flexDirection: 'row',
-    alignItems: 'center',
+  buttonContent: {
+    height: '100%',
     width: '100%',
+    alignItems: 'center',
+    flexDirection: 'row',
+    justifyContent: 'center',
   },
-  label: { marginLeft: 10, fontWeight: '700', color: 'white' },
 });
 
 export default UpdateProfileScreen;
